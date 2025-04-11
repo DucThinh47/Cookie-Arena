@@ -5,7 +5,7 @@
 - [HTTP Request Content-Length](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#http-request-content-length)
 - [HTTP Request Transfer Encoding](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#http-request-transfer-encoding)
 - [PHP Executor Playground](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#php-executor-playground)
-- [Hello Twig]()
+- [Hello Twig](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#hello-twig)
 
 ### HTTP Request Content-Length
 
@@ -97,25 +97,25 @@ Click `Execute` và có đầu ra như sau:
 
 Thử nhập chuỗi `cat /flag.txt` và dùng hàm `passthru`:
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image19 .png?raw=true)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image19.png?raw=true)
 
 **Flag: CHH{PHPFunct1Ons_986675c073d696bff00160b9e301232e}**
 
 ### Hello Twig
 
-![img](20)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image20.png?raw=true)
 
 Start challenge:
 
-![img](21)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image21.png?raw=true)
 
 Xem source page:
 
-![img](24)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image24.png?raw=true)
 
 Đoạn mã được thử thách cung cấp:
 
-![img](25)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image25.png?raw=true)
 
 Đoạn mã sử dụng `Twig Template Engine` để hiển thị nội dung HTML động. Để ý có hàm `run` trong `PHP` – thực thi shell command:
 
@@ -154,17 +154,17 @@ Lúc này, nếu người dùng truy cập URL như:
 Tiếp tục nhận thấy khi nhập 1 giá trị `Your name` bất kỳ và click `Submit`, sẽ có tham số `name` xuất hiện trên URL, có thể lợi dụng tham số này để chèn payload. Truy cập "PayloadsAllTheThings/Server Side Template Injection
 /PHP.md" để tìm kiếm payload:
 
-![img](26)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image26.png?raw=true)
 
 Thử dùng payload `{{['cat\x20/etc/passwd']|filter('system')}}`, thay thành `{{['cat\x20/flag.txt']|filter('system')}}`:
 
-![img](22)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image22.png?raw=true)
 
 ->Tìm được Flag.
 
 Nộp flag:
 
-![img](23)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image23.png?raw=true)
 
 **Flag: CHH{SSTI_PHP_S1mpl3Twig_39e344b86ac999e092b87b3429386eed}**
 
