@@ -5,6 +5,7 @@
 - [HTTP Request Content-Length](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#http-request-content-length)
 - [HTTP Request Transfer Encoding](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#http-request-transfer-encoding)
 - [PHP Executor Playground](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#php-executor-playground)
+- [Hello Twig]()
 
 ### HTTP Request Content-Length
 
@@ -99,6 +100,77 @@ Thử nhập chuỗi `cat /flag.txt` và dùng hàm `passthru`:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image19 .png?raw=true)
 
 **Flag: CHH{PHPFunct1Ons_986675c073d696bff00160b9e301232e}**
+
+### Hello Twig
+
+![img](20)
+
+Start challenge:
+
+![img](21)
+
+Xem source page:
+
+![img](24)
+
+Đoạn mã được thử thách cung cấp:
+
+![img](25)
+
+Đoạn mã sử dụng `Twig Template Engine` để hiển thị nội dung HTML động. Để ý có hàm `run` trong `PHP` – thực thi shell command:
+
+    $twig->addFunction(new \Twig\TwigFunction('run', function ($cmd) {
+        return shell_exec($cmd);
+    }));
+
+->Cho phép chạy lệnh shell từ trong template (rất nguy hiểm nếu không kiểm soát!)
+
+Đoạn mã này có khả năng bị khai thác lỗ hổng `Server-Side Template Injection (SSTI)` — nếu người dùng có thể `điều khiển nội dung template được render`. 
+
+->Khi nào xảy ra `SSTI`?
+
+- Ứng dụng sử dụng một `template engine` (như `Twig`, `Jinja2`,...).
+- Dữ liệu từ người dùng được truyền vào `template engine` mà không kiểm soát.
+- Kẻ tấn công có thể chèn `template expression` vào (ví dụ: `{{ 7 * 7 }}`, `{{ run('ls') }}`...).
+
+->Vấn đề trong đoạn code:
+
+Giả sử biến `$templates` được khởi tạo từ input người dùng như sau:
+
+    $templates = [
+        'hello' => $_GET['tpl'] 
+    ];
+
+Rồi đoạn này:
+
+    $message = $twig->render("hello");
+
+Lúc này, nếu người dùng truy cập URL như:
+
+    http://yourdomain.com/index.php?tpl={{ run('ls') }}
+
+->Nó sẽ thực thi lệnh hệ thống trên server thông qua hàm `run()` mà đã `addFunction` vào `Twig`, dẫn tới `Remote Code Execution (RCE)`.
+
+Tiếp tục nhận thấy khi nhập 1 giá trị `Your name` bất kỳ và click `Submit`, sẽ có tham số `name` xuất hiện trên URL, có thể lợi dụng tham số này để chèn payload. Truy cập "PayloadsAllTheThings/Server Side Template Injection
+/PHP.md" để tìm kiếm payload:
+
+![img](26)
+
+Thử dùng payload `{{['cat\x20/etc/passwd']|filter('system')}}`, thay thành `{{['cat\x20/flag.txt']|filter('system')}}`:
+
+![img](22)
+
+->Tìm được Flag.
+
+Nộp flag:
+
+![img](23)
+
+**Flag: CHH{SSTI_PHP_S1mpl3Twig_39e344b86ac999e092b87b3429386eed}**
+
+
+
+
 
 
 
