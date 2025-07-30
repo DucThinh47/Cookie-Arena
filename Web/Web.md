@@ -6,7 +6,7 @@
 - [HTTP Request Transfer Encoding](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#http-request-transfer-encoding)
 - [PHP Executor Playground](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#php-executor-playground)
 - [Hello Twig](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#hello-twig)
-- [NSLookup (Level 1)]()
+- [NSLookup (Level 1)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-1)
 
 ### HTTP Request Content-Length
 
@@ -171,23 +171,23 @@ Nộp flag:
 
 ### NSLookup (Level 1)
 
-![img](27)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image27.png?raw=true)
 
 Truy cập website:
 
-![img](28)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image28.png?raw=true)
 
 Tôi thử nhập tên miền `google.com` và click `LOOKUP`, kết quả trả về là thông tin của tên miền:
 
-![img](29)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image29.png?raw=true)
 
 Dựa vào mô tả thử thách, liên quan đến lỗ hổng `Command Injection`, tôi đã thử nhập `google.com && id`, kết quả trả về cho thấy website có khả năng dính lỗ hổng `Command Injection`:
 
-![img](30)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image30.png?raw=true)
 
 Tiếp theo tôi thử nhập `google.com && cat /flag.txt`:
 
-![img](31)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image31.png?raw=true)
 
 **Flag: CHH{S1mpl3C0mmandInj3ct1on_3d8f1302ef289248496527315e5f6271}**
 
