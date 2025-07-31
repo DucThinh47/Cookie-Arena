@@ -7,7 +7,7 @@
 - [PHP Executor Playground](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#php-executor-playground)
 - [Hello Twig](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#hello-twig)
 - [NSLookup (Level 1)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-1)
-- [Jinja2 VCard Generator]()
+- [NSLookup (Level 2)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-2)
 
 ### HTTP Request Content-Length
 
@@ -192,25 +192,25 @@ Tiếp theo tôi thử nhập `google.com && cat /flag.txt`:
 
 **Flag: CHH{S1mpl3C0mmandInj3ct1on_3d8f1302ef289248496527315e5f6271}**
 ### NSLookup (Level 2)
-![img](32)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image32.png?raw=true)
 
 Truy cập website:
 
-![img](33)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image33.png?raw=true)
 
 Tôi thử nhập `google.com`:
 
-![img](34)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image34.png?raw=true)
 
 Tiếp theo tôi thử nhập `google.com && id`:
 
-![img](35)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image35.png?raw=true)
 
 Dựa vào phản hồi này, có vẻ ký tự `space` của tôi đã bị escape thành `\032` (giá trị ASCII cho ký tự `space`). Ý tưởng của tôi là sẽ bypass bộ lọc này bằng những cách nối lệnh khác. 
 
 Sau khi thử một loạt payload, tôi đã tìm được payload `'; cat /flag.txt; #` - đây là cách đóng mở quote lại rồi chèn lệnh, như vậy payload cuối cùng sẽ là `google.com'; cat /flag.txt; #`:
 
-![img](36)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image36.png?raw=true)
 
 
 
