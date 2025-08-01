@@ -8,7 +8,7 @@
 - [Hello Twig](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#hello-twig)
 - [NSLookup (Level 1)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-1)
 - [NSLookup (Level 2)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-2)
-
+- [NSLookup (Level 3)]()
 ### HTTP Request Content-Length
 
 Challenge:
@@ -211,6 +211,53 @@ Dựa vào phản hồi này, có vẻ ký tự `space` của tôi đã bị esc
 Sau khi thử một loạt payload, tôi đã tìm được payload `'; cat /flag.txt; #` - đây là cách đóng mở quote lại rồi chèn lệnh, như vậy payload cuối cùng sẽ là `google.com'; cat /flag.txt; #`:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image36.png?raw=true)
+
+### NSLookup (Level 3)
+
+![img](37)
+
+Truy cập website:
+
+![img](38)
+
+Xem source code của trang web, tôi thấy rằng có một filter được áp dụng ở đây:
+
+![img](39)
+
+Đây là filter được viết bằng JS, để tạm thời vô hiệu hóa filter này, tôi đã `Disable JS` trong dev tools:
+
+![img](40)
+
+Sau khi thử một loạt các cách bypass bộ lọc câu lệnh của thử thách ,tôi đã tìm được payload sau: 
+
+    google.com'; find / -type f 2>/dev/null | grep flag; #
+
+Payload này sẽ giúp tôi dò file theo pattern được thử thách cung cấp `/flagXXXX.txt`. Kết quả trả về từ website:
+
+![img](41)
+
+![img](42)
+
+=> Tôi đã tìm được file chứa flag theo đúng định dạng: `/flagbsEQj.txt`. Để đọc nội dung file này, ý tưởng của tôi là mã hóa base64 nội dung file rồi decode lại:
+
+    google.com'; base64 /flagbsEQj.txt; #
+
+Kết quả là tôi đã tìm được nội dung flag được mã hóa base64:
+
+![img](43)
+
+Decode nội dung này và tôi tìm được flag:
+
+![img](44)
+
+
+
+
+
+
+
+
+
 
 
 
