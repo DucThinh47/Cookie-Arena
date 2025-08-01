@@ -9,7 +9,7 @@
 - [NSLookup (Level 1)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-1)
 - [NSLookup (Level 2)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-2)
 - [NSLookup (Level 3)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-3)
-- [Mass Assignment Profile]()
+- [Mass Assignment Profile](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#mass-assignment-profile)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -251,27 +251,27 @@ Decode nội dung này và tôi tìm được flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image44.png?raw=true)
 ### Mass Assignment Profile
 
-![img](45)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image45.png?raw=true)
 
 Truy cập trang web:
 
-![img](46)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image46.png?raw=true)
 
 Thử login vào tài khoản `alice`:
 
-![img](47)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image47.png?raw=true)
 
 Tôi thử sửa Full Name thành `admin`:
 
-![img](48)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image48.png?raw=true)
 
 Kiểm tra request này:
 
-![img](49)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image49.png?raw=true)
 
 Ý tưởng của tôi là thêm vào request body trường `role` với giá trị là `admin` và đã tìm được flag.
 
-![img](50)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image50.png?raw=true)
 
 
 
