@@ -9,8 +9,8 @@
 - [NSLookup (Level 1)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-1)
 - [NSLookup (Level 2)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-2)
 - [NSLookup (Level 3)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-3)
+- [Mass Assignment Profile]()
 ### HTTP Request Content-Length
-
 Challenge:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image.png?raw=true)
@@ -249,6 +249,33 @@ Kết quả là tôi đã tìm được nội dung flag được mã hóa base64
 Decode nội dung này và tôi tìm được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image44.png?raw=true)
+### Mass Assignment Profile
+
+![img](45)
+
+Truy cập trang web:
+
+![img](46)
+
+Thử login vào tài khoản `alice`:
+
+![img](47)
+
+Tôi thử sửa Full Name thành `admin`:
+
+![img](48)
+
+Kiểm tra request này:
+
+![img](49)
+
+Ý tưởng của tôi là thêm vào request body trường `role` với giá trị là `admin` và đã tìm được flag.
+
+![img](50)
+
+
+
+
 
 
 
