@@ -11,6 +11,7 @@
 - [NSLookup (Level 3)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-3)
 - [Mass Assignment Profile](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#mass-assignment-profile)
 - [Baby HTTP Method](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-http-method)
+- [What is your name?](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#what-is-your-name)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -296,19 +297,19 @@ Dựa vào mô tả thử thách, tôi cần tìm endpoint ẩn, sau đó gửi 
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image56.png?raw=true)
 ### What is your name?
-![img](57)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image57.png?raw=true)
 
 Tôi đã kiểm tra source code nhưng không có gì. Khi kiểm tra response khi refresh lại trang, tôi đã nghĩ đến lỗ hổng `SSTI`:
 
-![img](58)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image58.png?raw=true)
 
 Tiếp theo, khi nội dung trang web là `Hello. What is your name?`. Ý tưởng của tôi là tôi sẽ gửi một request đến `/?name={{7*7}}` để kiểm tra trang web có dính `SSTI` thật không:
 
-![img](59)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image59.png?raw=true)
 
 => Như vậy đã xác định được trang web dính lỗ hổng `SSTI`. Tôi sẽ chèn payload `{{request.application.__globals__.__builtins__.__import__('os').popen('cat /flag.txt').read()}}`:
 
-![img](60)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image60.png?raw=true)
 
 
 
