@@ -10,7 +10,7 @@
 - [NSLookup (Level 2)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-2)
 - [NSLookup (Level 3)](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#nslookup-level-3)
 - [Mass Assignment Profile](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#mass-assignment-profile)
-- [File Checksum]()
+- [Baby HTTP Method](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-http-method)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -274,27 +274,27 @@ Kiểm tra request này:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image50.png?raw=true)
 ### Baby HTTP Method
-![img](51)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image51.png?raw=true)
 
 Truy cập website:
 
-![img](52)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image52.png?raw=true)
 
 Thử click `click me for the flag`:
 
-![img](53)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image53.png?raw=true)
 
 Xem source code:
 
-![img](54)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image54.png?raw=true)
 
 Dựa vào mô tả thử thách, tôi cần tìm endpoint ẩn, sau đó gửi PUT request đến endpoint này. Nhìn qua source code, tôi để ý tới `<!-- /src -->`. Thử truy cập `/src`:
 
-![img](55)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image55.png?raw=true)
 
 => Đã tìm được endpoint ẩn, tiếp theo tôi gửi PUT request đến endpoint này và tìm được flag:
 
-![img](56)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image56.png?raw=true)
 
 
 
