@@ -12,7 +12,7 @@
 - [Mass Assignment Profile](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#mass-assignment-profile)
 - [Baby HTTP Method](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-http-method)
 - [What is your name?](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#what-is-your-name)
-- [I Known Your IP]()
+- [I Known Your IP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#i-known-your-ip)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -313,11 +313,11 @@ Tiếp theo, khi nội dung trang web là `Hello. What is your name?`. Ý tưở
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image60.png?raw=true)
 ### I Known Your IP
 
-![img](61)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image61.png?raw=true)
 
 Truy cập website:
 
-![img](62)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image62.png?raw=true)
 
 Đoạn code được thử thách cung cấp: 
 
@@ -355,11 +355,11 @@ Biến `message` là một `f-string` chứa giá trị có thể do người d�
 
 Vì `render_template_string()` sử dụng `Jinja2` (template engine mặc định của Flask), tôi có thể thử thêm header `X-Forwarded-For: {{7*7}}` vào request để kiểm tra:
 
-![img](63)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image63.png?raw=true)
 
 Tiếp theo tôi thay giá trị của `X-Forwarded-For` thành `{{ self.__init__.__globals__.__builtins__.__import__('os').popen('cat /flag.txt').read() }}` và tìm được flag:
 
-![img](64)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image64.png?raw=true)
 
 
 
