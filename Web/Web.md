@@ -14,7 +14,7 @@
 - [What is your name?](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#what-is-your-name)
 - [I Known Your IP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#i-known-your-ip)
 - [eViewer](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#eviewer)
-- [Cookie Comic]()
+- [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -375,29 +375,29 @@ Tôi thử nhập file name là `../../../flag.txt` và tìm được flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image67.png?raw=true)
 ### Cookie Comic
 
-![img](68)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image68.png?raw=true)
 
 Truy cập trang web:
 
-![img](69)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image69.png?raw=true)
 
 Kiểm tra source code, tôi tìm được đường dẫn tới những bức ảnh được hiển thị trên trang web:
 
-![img](70)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image70.png?raw=true)
 
 Truy cập link này:
 
-![img](71)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image71.png?raw=true)
 
 Tôi đã thử thay đổi đường dẫn này thành:
 
-![img](72)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image72.png?raw=true)
 
 Sau khi Enter, 1 file `image.php` được tự động tải về và nội dung file chính là flag:
 
-![img](73)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image73.png?raw=true)
 
-![img](74)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image74.png?raw=true)
 
 
 
