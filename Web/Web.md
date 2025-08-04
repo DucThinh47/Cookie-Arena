@@ -13,7 +13,7 @@
 - [Baby HTTP Method](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-http-method)
 - [What is your name?](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#what-is-your-name)
 - [I Known Your IP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#i-known-your-ip)
-- [eViewer]()
+- [eViewer](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#eviewer)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -363,15 +363,15 @@ Tiếp theo tôi thay giá trị của `X-Forwarded-For` thành `{{ self.__init_
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image64.png?raw=true)
 ### eViewer
 
-![img](65)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image65.png?raw=true)
 
 Truy cập trang web:
 
-![img](66)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image66.png?raw=true)
 
 Tôi thử nhập file name là `../../../flag.txt` và tìm được flag:
 
-![img](67)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image67.png?raw=true)
 
 
 
