@@ -323,7 +323,7 @@ Truy cập website:
 
 Đoạn code được thử thách cung cấp: 
 
-from flask import Flask, request, render_template_string
+    from flask import Flask, request, render_template_string
 
     app = Flask(__name__)
 
