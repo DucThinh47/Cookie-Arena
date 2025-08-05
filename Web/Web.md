@@ -16,6 +16,7 @@
 - [eViewer](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#eviewer)
 - [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
 - [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
+- [COMB]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -424,6 +425,35 @@ Sau khi upload và truy cập vào file, tôi tìm được file chứa flag:
 Cuối cùng chỉ cần đọc nội dung file này để tìm ra flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image76.png?raw=true)
+### COMB
+![img](81)
+
+Truy cập trang web:
+
+![img](83)
+
+![img](82)
+
+Truy cập vào trang login:
+
+![img](84)
+
+Sau khi thử tấn công `SQLi` nhưng không thành công, tôi thử truy cập `/robots.txt` và tìm được đường dẫn `/comb.php`:
+
+![img](85)
+
+Truy cập đường dẫn này:
+
+![img](86)
+
+Tôi thử nhập vào email của John và tìm ra được mật khẩu:
+
+![img](87)
+
+Sau khi login, website sẽ hiển thị flag:
+
+![img](88)
+
 
 
 
