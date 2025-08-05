@@ -16,7 +16,7 @@
 - [eViewer](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#eviewer)
 - [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
 - [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
-- [COMB]()
+- [COMB](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#comb)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -426,33 +426,33 @@ Cuối cùng chỉ cần đọc nội dung file này để tìm ra flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image76.png?raw=true)
 ### COMB
-![img](81)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image81.png?raw=true)
 
 Truy cập trang web:
 
-![img](83)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image83.png?raw=true)
 
-![img](82)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image82.png?raw=true)
 
 Truy cập vào trang login:
 
-![img](84)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image84.png?raw=true)
 
 Sau khi thử tấn công `SQLi` nhưng không thành công, tôi thử truy cập `/robots.txt` và tìm được đường dẫn `/comb.php`:
 
-![img](85)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image85.png?raw=true)
 
 Truy cập đường dẫn này:
 
-![img](86)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image86.png?raw=true)
 
 Tôi thử nhập vào email của John và tìm ra được mật khẩu:
 
-![img](87)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image87.png?raw=true)
 
 Sau khi login, website sẽ hiển thị flag:
 
-![img](88)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image88.png?raw=true)
 
 
 
