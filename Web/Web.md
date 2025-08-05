@@ -15,6 +15,7 @@
 - [I Known Your IP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#i-known-your-ip)
 - [eViewer](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#eviewer)
 - [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
+- [My Deploy]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -398,10 +399,31 @@ Sau khi Enter, 1 file `image.php` được tự động tải về và nội dun
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image73.png?raw=true)
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image74.png?raw=true)
+### My Deploy
 
+![img](77)
 
+Truy cập trang web:
 
+![img](78)
 
+Trang web này có chức năng upload file zip và sẽ được tự động giải nén và lưu trong thư mục `/extracted`:
+
+![img](79)
+
+![img](80)
+
+Tôi đã tạo 1 file `.php` với nội dung sau để tìm ra tên của file chứa flag:
+
+    <?php echo shell_exec("find / -type f -name 'flag*.txt' 2>/dev/null"); ?>
+
+Sau khi upload và truy cập vào file, tôi tìm được file chứa flag:
+
+![img](75)
+
+Cuối cùng chỉ cần đọc nội dung file này để tìm ra flag:
+
+![img](76)
 
 
 
