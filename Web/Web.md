@@ -15,7 +15,7 @@
 - [I Known Your IP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#i-known-your-ip)
 - [eViewer](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#eviewer)
 - [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
-- [My Deploy]()
+- [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -401,17 +401,17 @@ Sau khi Enter, 1 file `image.php` được tự động tải về và nội dun
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image74.png?raw=true)
 ### My Deploy
 
-![img](77)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image77.png?raw=true)
 
 Truy cập trang web:
 
-![img](78)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image78.png?raw=true)
 
 Trang web này có chức năng upload file zip và sẽ được tự động giải nén và lưu trong thư mục `/extracted`:
 
-![img](79)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image79.png?raw=true)
 
-![img](80)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image80.png?raw=true)
 
 Tôi đã tạo 1 file `.php` với nội dung sau để tìm ra tên của file chứa flag:
 
@@ -419,11 +419,11 @@ Tôi đã tạo 1 file `.php` với nội dung sau để tìm ra tên của file
 
 Sau khi upload và truy cập vào file, tôi tìm được file chứa flag:
 
-![img](75)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image75.png?raw=true)
 
 Cuối cùng chỉ cần đọc nội dung file này để tìm ra flag:
 
-![img](76)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image76.png?raw=true)
 
 
 
