@@ -570,7 +570,11 @@ Sau khi thử một loạt các câu lệnh phổ biến như `ls`, `id`, `whoam
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image112.png?raw=true)
 
-Sau đó lệnh cuối cùng của tôi sẽ là cat `echo L2ZsYWcudHh0Cg== | base64 -d` tương đương với lệnh `cat /flag.txt` và flag được trả về:
+Sau đó lệnh cuối cùng của tôi sẽ là:
+
+    cat `echo L2ZsYWcudHh0Cg== | base64 -d` 
+
+Tương đương với lệnh `cat /flag.txt` và flag được trả về:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image113.png?raw=true)
 
