@@ -18,6 +18,7 @@
 - [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
 - [COMB](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#comb)
 - [System Monitor](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#system-monitor)
+- [Baby Simple Go CURL]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -495,6 +496,44 @@ Tiếp theo tôi thử chèn `echo "<?php system (\$_GET['cmd']); ?>" > shell.ph
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image96.png?raw=true)
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image97.png?raw=true)
+### Baby Simple Go CURL
+
+![img](98)
+
+Truy cập trang web:
+
+![img](99)
+
+Tôi thử nhập `https://line.me/en/` và nhận được thông báo:
+
+![img](100)
+
+Phân tích đoạn code được thử thách cung cấp:
+
+![img](101)
+
+`/flag/`: Sẽ chỉ trả về flag nếu request đến từ IP là `127.0.0.1`
+
+Với gợi ý này, tôi thử nhập `http://127.0.0.1:1337/flag/`:
+
+![img](102)
+
+Vẫn thông báo lỗi, tiếp tục kiểm tra code, tôi tìm được:
+
+![img](103)
+
+=> Request sẽ bị chặn nếu IP không phải `localhost` và URL chứa `flag`, `curl` hoặc `%`. 
+
+Ý tưởng của tôi lúc này là thử chuyển hướng IP client đến địa chỉ IP cục bộ sử dụng `X-Forwarded-For` header:
+
+![img](104)
+
+=> Base64 decode và có được flag.
+
+
+
+
+
 
 
 
