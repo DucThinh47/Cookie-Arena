@@ -20,7 +20,7 @@
 - [System Monitor](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#system-monitor)
 - [Baby Simple Go CURL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-simple-go-curl)
 - [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
-- [Empty Execution]()
+- [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -544,11 +544,11 @@ Dựa vào mô tả thử thách, có thể là gợi ý rằng server sẽ ki�
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image107.png?raw=true)
 ### Empty Execution
 
-![img](108)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image108.png?raw=true)
 
 Truy cập trang web:
 
-![img](109)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image109.png?raw=true)
 
 Phân tích đoạn code, tôi thấy rằng:
 - Endpoint chính sẽ là `/run_command` (POST).
@@ -558,21 +558,21 @@ Phân tích đoạn code, tôi thấy rằng:
     - Không cho phép `..` hoặc `/` trong command
     - Chỉ chạy file nếu có quyền `os.X_OK`
 
-![img](110)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image110.png?raw=true)
 
 Sau khi thử một loạt các câu lệnh phổ biến như `ls`, `id`, `whoami` và tôi cũng kết hợp các câu lệnh lại thành như `ls; whoami` nhưng server vẫn không trả về gì, ý tưởng tiếp theo của tôi là sử dụng lệnh `.` - lệnh này sẽ thực thi file hiện tại (thường là `source .` trong shell), không làm gì nếu không có file `.`, nhưng không lỗi.
 
 => Payload của tôi sẽ là `. ; ls -al`:
 
-![img](111)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image111.png?raw=true)
 
 => Server đã trả về output của lệnh `ls -al`. Tiếp theo để đọc được `/flag.txt` với điều kiện ký tự `/` bị chặn. Ý tưởng của tôi là mã hóa base64 chuỗi `flag.txt`:
 
-![img](112)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image112.png?raw=true)
 
 Sau đó lệnh cuối cùng của tôi sẽ là cat `echo L2ZsYWcudHh0Cg== | base64 -d` tương đương với lệnh `cat /flag.txt` và flag được trả về:
 
-![img](113)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image113.png?raw=true)
 
 
 
