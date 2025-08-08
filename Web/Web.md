@@ -19,7 +19,7 @@
 - [COMB](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#comb)
 - [System Monitor](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#system-monitor)
 - [Baby Simple Go CURL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-simple-go-curl)
-- [Where do you come from]()
+- [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -532,15 +532,15 @@ Vẫn thông báo lỗi, tiếp tục kiểm tra code, tôi tìm được:
 => Base64 decode và có được flag.
 ### Where do you come from
 
-![img](105)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image105.png?raw=true)
 
 Truy cập trang web:
 
-![img](106)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image106.png?raw=true)
 
 Dựa vào mô tả thử thách, có thể là gợi ý rằng server sẽ kiểm tra nguồn truy cập của request. Ý tưởng của tôi là thêm `Referer` header vào request và flag được trả về:
 
-![img](107)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image107.png?raw=true)
 
 
 
