@@ -20,6 +20,7 @@
 - [System Monitor](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#system-monitor)
 - [Baby Simple Go CURL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-simple-go-curl)
 - [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
+- [Empty Execution]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -541,8 +542,37 @@ Truy cập trang web:
 Dựa vào mô tả thử thách, có thể là gợi ý rằng server sẽ kiểm tra nguồn truy cập của request. Ý tưởng của tôi là thêm `Referer` header vào request và flag được trả về:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image107.png?raw=true)
+### Empty Execution
 
+![img](108)
 
+Truy cập trang web:
+
+![img](109)
+
+Phân tích đoạn code, tôi thấy rằng:
+- Endpoint chính sẽ là `/run_command` (POST).
+- Nhận một JSON chứa `command` và thực thi nó trên server
+- Kiểm tra bảo mật:
+    - Độ dài command phải >= 5 ký tự
+    - Không cho phép `..` hoặc `/` trong command
+    - Chỉ chạy file nếu có quyền `os.X_OK`
+
+![img](110)
+
+Sau khi thử một loạt các câu lệnh phổ biến như `ls`, `id`, `whoami` và tôi cũng kết hợp các câu lệnh lại thành như `ls; whoami` nhưng server vẫn không trả về gì, ý tưởng tiếp theo của tôi là sử dụng lệnh `.` - lệnh này sẽ thực thi file hiện tại (thường là `source .` trong shell), không làm gì nếu không có file `.`, nhưng không lỗi.
+
+=> Payload của tôi sẽ là `. ; ls -al`:
+
+![img](111)
+
+=> Server đã trả về output của lệnh `ls -al`. Tiếp theo để đọc được `/flag.txt` với điều kiện ký tự `/` bị chặn. Ý tưởng của tôi là mã hóa base64 chuỗi `flag.txt`:
+
+![img](112)
+
+Sau đó lệnh cuối cùng của tôi sẽ là cat `echo L2ZsYWcudHh0Cg== | base64 -d` tương đương với lệnh `cat /flag.txt` và flag được trả về:
+
+![img](113)
 
 
 
