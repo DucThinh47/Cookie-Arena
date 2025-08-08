@@ -18,4 +18,4 @@
 - [My Deploy](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#my-deploy)
 - [COMB](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#comb)
 - [System Monitor](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#system-monitor)
-- [Baby Simple Go CURL]()
+- [Baby Simple Go CURL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-simple-go-curl)
