@@ -21,7 +21,7 @@
 - [Baby Simple Go CURL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-simple-go-curl)
 - [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
 - [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
-- [Baby Guestbook]()
+- [Baby Guestbook](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-guestbook)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -580,23 +580,23 @@ Tương đương với lệnh `cat /flag.txt` và flag được trả về:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image113.png?raw=true)
 ### Baby Guestbook
 
-![img](114)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image114.png?raw=true)
 
 Truy cập trang web:
 
-![img](115)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image115.png?raw=true)
 
 Tôi thử gửi một message với name là `admin` và message là `admin :smile:` và click Submit:
 
-![img](116)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image116.png?raw=true)
 
 Kết quả trả về như sau:
 
-![img](117)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image117.png?raw=true)
 
 Tìm hiểu source code được cung cấp, tôi tìm được đoạn sau:
 
-![img](118)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image118.png?raw=true)
 
 => Hàm `ResolveEmojis` sẽ tìm tất cả chuỗi dạng `:emoji_name:` trong nội dung POST. 
 
@@ -608,15 +608,15 @@ Tìm hiểu source code được cung cấp, tôi tìm được đoạn sau:
 
 Như vậy tôi đã thử nhập nội dung message là `:../../../flag.txt:`, kết quả trả về như sau:
 
-![img](119)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image119.png?raw=true)
 
 Ảnh không được hiển thị, thử kiểm tra source code và thấy một chuỗi base64 được mã hóa:
 
-![img](120)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image120.png?raw=true)
 
 Decode chuỗi này, tôi tìm được flag:
 
-![img](121)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image121.png?raw=true)
 
 
 
