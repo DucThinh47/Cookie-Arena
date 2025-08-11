@@ -21,6 +21,7 @@
 - [Baby Simple Go CURL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-simple-go-curl)
 - [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
 - [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
+- [Baby Guestbook]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -577,8 +578,45 @@ Sau đó lệnh cuối cùng của tôi sẽ là:
 Tương đương với lệnh `cat /flag.txt` và flag được trả về:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image113.png?raw=true)
+### Baby Guestbook
 
+![img](114)
 
+Truy cập trang web:
+
+![img](115)
+
+Tôi thử gửi một message với name là `admin` và message là `admin :smile:` và click Submit:
+
+![img](116)
+
+Kết quả trả về như sau:
+
+![img](117)
+
+Tìm hiểu source code được cung cấp, tôi tìm được đoạn sau:
+
+![img](118)
+
+=> Hàm `ResolveEmojis` sẽ tìm tất cả chuỗi dạng `:emoji_name:` trong nội dung POST. 
+
+=> Với mỗi emoji, hàm `getEmojiByName` sẽ:
+- Lấy tên emoji (bỏ dấu `:`), ví dụ `:smile:` => `smile`
+- Ghép vào đường dẫn: `static/emojis/%s` => ví dụ `static/emojis/smile`
+- Đọc file đó, `encode base64`, trả về thẻ `<img src='data:image/png;base64,...'>`
+- Nếu không đọc được file, trả lại tên emoji gốc.
+
+Như vậy tôi đã thử nhập nội dung message là `:../../../flag.txt:`, kết quả trả về như sau:
+
+![img](119)
+
+Ảnh không được hiển thị, thử kiểm tra source code và thấy một chuỗi base64 được mã hóa:
+
+![img](120)
+
+Decode chuỗi này, tôi tìm được flag:
+
+![img](121)
 
 
 
