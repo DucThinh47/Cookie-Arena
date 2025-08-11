@@ -23,7 +23,7 @@
 - [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
 - [Baby Guestbook](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-guestbook)
 - [Baby SQLite With Filter](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-sqlite-with-filter)
-- [SQL Truncation Attack]()
+- [SQL Truncation Attack](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#sql-truncation-attack)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -654,11 +654,11 @@ Tiếp theo để bypass bộ lọc khoảng trắng, có thể sử dụng `com
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image126.png?raw=true)
 ### SQL Truncation Attack
 
-![img](127)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image127.png?raw=true)
 
 Truy cập trang web:
 
-![img](128)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image128.png?raw=true)
 
 Tôi thử click `Register` và đăng ký một tài khoản `admin` nhưng website báo lỗi rằng `username` đã tồn tại. 
 
@@ -668,7 +668,7 @@ Khi thực thi lệnh `SELECT` hoặc `INSERT`, DB sẽ kiểm tra và cắt b�
 
 Như vậy trong table hiện tại sẽ có 2 admin và tôi có thể login vào tài khoản `admin` mà tôi đã tạo và tìm được flag:
 
-![img](129)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image129.png?raw=true)
 
 
 
