@@ -23,6 +23,7 @@
 - [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
 - [Baby Guestbook](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-guestbook)
 - [Baby SQLite With Filter](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-sqlite-with-filter)
+- [SQL Truncation Attack]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -651,6 +652,25 @@ Tiếp theo để bypass bộ lọc khoảng trắng, có thể sử dụng `com
 `level=0`: điều kiện false cho user hiện tại. Gửi request và tìm được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image126.png?raw=true)
+### SQL Truncation Attack
+
+![img](127)
+
+Truy cập trang web:
+
+![img](128)
+
+Tôi thử click `Register` và đăng ký một tài khoản `admin` nhưng website báo lỗi rằng `username` đã tồn tại. 
+
+Dựa vào tên thử thách: `SQL Truncation Attack`, tôi đã đăng ký một tài khoản có `username` là `admin                 a`. Tổng quan về lỗ hổng: Lỗ hổng này xuất phát từ việc không kiểm soát chặt chẽ `độ dài` của dữ liệu nhập vào, cho phép dữ liệu dài hơn giới hạn của trường dữ liệu được gửi đến DB.
+
+Khi thực thi lệnh `SELECT` hoặc `INSERT`, DB sẽ kiểm tra và cắt bớt phần dữ liệu dư thừa.
+
+Như vậy trong table hiện tại sẽ có 2 admin và tôi có thể login vào tài khoản `admin` mà tôi đã tạo và tìm được flag:
+
+![img](129)
+
+
 
 
 
