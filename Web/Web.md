@@ -22,6 +22,7 @@
 - [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
 - [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
 - [Baby Guestbook](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-guestbook)
+- [Baby SQLite With Filter]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -617,6 +618,41 @@ Như vậy tôi đã thử nhập nội dung message là `:../../../flag.txt:`, 
 Decode chuỗi này, tôi tìm được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image121.png?raw=true)
+### Baby SQLite With Filter
+
+![img](122)
+
+Truy cập trang web:
+
+![img](123)
+
+Dựa theo đoạn code được cung cấp, rất khó để chèn payload vào 2 tham số `uid` và `upw` vì 2 tham số đã được cover bởi dấu `''`:
+
+![img](124)
+
+Tôi cần điều khiển câu truy vấn SQL trả về `uid = 'admin'` để server trả về flag nhưng tham số `level` bị filter khá nhiều ký tự bao gồm cả `admin`, `select` nên không thể dùng SQL theo cách thông thường:
+
+![img](125)
+
+Ý tưởng của tôi là thay vì dùng `select`, tôi sẽ kết hợp lệnh `union` và sử dụng `values` để tạo table ảo:
+
+    ... level=0 UNION VALUES('admin');
+- `VALUES('admin')` tạo ra một dòng ảo với giá trị `admin` trong một cột
+- `UNION` nối dòng giả này vào kết quả
+
+Tiếp theo để bypass bộ lọc từ `admin`, có thể dùng hàm `char()` của SQLite để tạo từng ký tự theo mã ASCII rồi nối lại:
+
+    char(97)||char(100)||char(109)||char(105)||char(110)
+
+Tiếp theo để bypass bộ lọc khoảng trắng, có thể sử dụng `comment` `/**/` thay thế cho khoảng trắng. Payload cuối cùng sẽ là:
+
+    level=0/**/union/**/values(char(97)||char(100)||char(109)||char(105)||char(110))
+
+`level=0`: điều kiện false cho user hiện tại. Gửi request và tìm được flag:
+
+![img](126)
+
+
 
 
 
