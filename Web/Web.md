@@ -22,7 +22,7 @@
 - [Where do you come from](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#where-do-you-come-from)
 - [Empty Execution](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#empty-execution)
 - [Baby Guestbook](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-guestbook)
-- [Baby SQLite With Filter]()
+- [Baby SQLite With Filter](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-sqlite-with-filter)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -620,19 +620,19 @@ Decode chuỗi này, tôi tìm được flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image121.png?raw=true)
 ### Baby SQLite With Filter
 
-![img](122)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image122.png?raw=true)
 
 Truy cập trang web:
 
-![img](123)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image123.png?raw=true)
 
 Dựa theo đoạn code được cung cấp, rất khó để chèn payload vào 2 tham số `uid` và `upw` vì 2 tham số đã được cover bởi dấu `''`:
 
-![img](124)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image124.png?raw=true)
 
 Tôi cần điều khiển câu truy vấn SQL trả về `uid = 'admin'` để server trả về flag nhưng tham số `level` bị filter khá nhiều ký tự bao gồm cả `admin`, `select` nên không thể dùng SQL theo cách thông thường:
 
-![img](125)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image125.png?raw=true)
 
 Ý tưởng của tôi là thay vì dùng `select`, tôi sẽ kết hợp lệnh `union` và sử dụng `values` để tạo table ảo:
 
@@ -650,7 +650,7 @@ Tiếp theo để bypass bộ lọc khoảng trắng, có thể sử dụng `com
 
 `level=0`: điều kiện false cho user hiện tại. Gửi request và tìm được flag:
 
-![img](126)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image126.png?raw=true)
 
 
 
