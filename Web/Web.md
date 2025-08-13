@@ -24,7 +24,7 @@
 - [Baby Guestbook](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-guestbook)
 - [Baby SQLite With Filter](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-sqlite-with-filter)
 - [SQL Truncation Attack](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#sql-truncation-attack)
-- [Leaked OTP]()
+- [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -672,15 +672,15 @@ Như vậy trong table hiện tại sẽ có 2 admin và tôi có thể login v�
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image129.png?raw=true)
 ### Leaked OTP
 
-![img](130)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image130.png?raw=true)
 
 Thử thách được cung cấp 2 list username và password. Tôi đã thử brute-force để tìm ra request nào sẽ trả về response khác biệt:
 
-![img](131)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image131.png?raw=true)
 
 => Tôi đã tìm được username và password của admin: `admin:admin@123`. Sau khi login và nhập mã OTP (bị leak trong response), tôi có được flag:
 
-![img](132)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image132.png?raw=true)
 
 
 
