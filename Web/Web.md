@@ -26,7 +26,7 @@
 - [SQL Truncation Attack](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#sql-truncation-attack)
 - [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
 - [Unzip me now](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#unzip-me-now)
-- [Ping 0x02]()
+- [Ping 0x02](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x02)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -719,7 +719,7 @@ Khi click vào `flag` thì file flag sẽ được tải về, xem nội dung fi
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image137.png?raw=true)
 ### Ping 0x02
 
-![img](138)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image138.png?raw=true)
 
 Trang web cho phép nhập IP và khi click Ping thì sẽ tạo lệnh ping đến địa chỉ IP này. 
 
@@ -758,7 +758,7 @@ Trong đoạn code mà thử thách cung cấp, tôi tìm được bộ lọc:
 
 Sau khi chèn payload này tôi có được flag:
 
-![img](139)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image139.png?raw=true)
 
 
 
