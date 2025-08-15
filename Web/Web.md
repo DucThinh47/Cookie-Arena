@@ -25,6 +25,7 @@
 - [Baby SQLite With Filter](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-sqlite-with-filter)
 - [SQL Truncation Attack](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#sql-truncation-attack)
 - [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
+- [Unzip me now]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -681,6 +682,48 @@ Thử thách được cung cấp 2 list username và password. Tôi đã thử b
 => Tôi đã tìm được username và password của admin: `admin:admin@123`. Sau khi login và nhập mã OTP (bị leak trong response), tôi có được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image132.png?raw=true)
+
+### Unzip me now
+
+![img](133)
+
+Truy cập trang web:
+
+![img](134)
+
+Tôi đã thử tạo một số payload php sau đó nén lại thành file zip để up lên web nhưng không tìm được flag. Tiếp theo thử path traversal cũng không tìm được.
+
+Tiếp theo tôi thử sử dụng kỹ thuật symbolic link (symlink).
+
+Trước tiên tôi tạo symlink qua lệnh:
+
+    ln -s /flag.txt flag
+
+![img](135)
+
+Lúc này file `flag` không chứa dữ liệu thật, mà chỉ là một "đường dẫn ảo" trỏ tới `/flag.txt`.
+
+Tiếp theo tôi sẽ đóng gói symlink vào zip:
+
+    zip --symlinks flag.zip flag
+
+Tuỳ chọn `--symlinks` yêu cầu zip lưu thông tin liên kết tượng trưng thay vì đọc nội dung mà symlink trỏ tới. Kết quả là trong `flag.zip`, `flag` vẫn là một symlink tới `/flag.txt`.
+
+Upload file `flag.zip` lên website, truy cập vào trong folder:
+
+![img](136)
+
+Khi click vào `flag` thì file flag sẽ được tải về, xem nội dung file và tôi có được flag:
+
+![img](137)
+
+
+
+
+
+
+
+
 
 
 
