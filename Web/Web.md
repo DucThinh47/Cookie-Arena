@@ -27,6 +27,7 @@
 - [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
 - [Unzip me now](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#unzip-me-now)
 - [Ping 0x02](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x02)
+- [Under Construction]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -759,11 +760,43 @@ Trong đoạn code mà thử thách cung cấp, tôi tìm được bộ lọc:
 Sau khi chèn payload này tôi có được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image139.png?raw=true)
+### Under Construction
 
+![img](140)
 
+Truy cập trang web:
 
+![img](141)
 
+Tôi đã kiểm tra source code và không tìm được gì.
 
+Tiếp theo thử download file thử thách cung cấp, là 1 file `.war`, xem nội dung bên trong:
+
+![img](142)
+
+Thử xem nội dung file `image.jsp`:
+
+![img](143)
+
+Phân tích đoạn code này:
+
+    String filepath = getServletContext().getRealPath("resources") + "/";
+    String _file = request.getParameter("file");
+
+    java.io.FileInputStream fileInputStream = new java.io.FileInputStream(filepath + _file);
+
+- `getServletContext().getRealPath("resources")` sẽ trả về đường dẫn tuyệt đối đến thư mục `resources` trong `webapp` đã được deploy.
+- Tham số `file` từ request được nối thẳng vào đường dẫn mà không có lọc gì.
+
+=> Nếu tôi có thể chèn `../`, tôi có thể thoát ra khỏi thư mục `resources` và đọc file ở vị trí khác.
+
+Đồng thời, tôi tìm hiểu được website sử dụng `tomcat`:
+
+![img](144)
+
+Với `tomcat`, thư mục `resources` thường nằm ở `/var/lib/tomcat/webapps/ROOT/resources/`. Tôi đã thử gửi GET request đến `/image.jsp?file=../../../../../../flag.txt` và đã thu được flag:
+
+![img](145)
 
 
 
