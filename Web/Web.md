@@ -25,7 +25,7 @@
 - [Baby SQLite With Filter](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-sqlite-with-filter)
 - [SQL Truncation Attack](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#sql-truncation-attack)
 - [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
-- [Unzip me now]()
+- [Unzip me now](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#unzip-me-now)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -685,11 +685,11 @@ Thử thách được cung cấp 2 list username và password. Tôi đã thử b
 
 ### Unzip me now
 
-![img](133)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image133.png?raw=true)
 
 Truy cập trang web:
 
-![img](134)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image134.png?raw=true)
 
 Tôi đã thử tạo một số payload php sau đó nén lại thành file zip để up lên web nhưng không tìm được flag. Tiếp theo thử path traversal cũng không tìm được.
 
@@ -699,7 +699,7 @@ Trước tiên tôi tạo symlink qua lệnh:
 
     ln -s /flag.txt flag
 
-![img](135)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image135.png?raw=true)
 
 Lúc này file `flag` không chứa dữ liệu thật, mà chỉ là một "đường dẫn ảo" trỏ tới `/flag.txt`.
 
@@ -711,11 +711,11 @@ Tuỳ chọn `--symlinks` yêu cầu zip lưu thông tin liên kết tượng tr
 
 Upload file `flag.zip` lên website, truy cập vào trong folder:
 
-![img](136)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image136.png?raw=true)
 
 Khi click vào `flag` thì file flag sẽ được tải về, xem nội dung file và tôi có được flag:
 
-![img](137)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image137.png?raw=true)
 
 
 
