@@ -27,7 +27,7 @@
 - [Leaked OTP](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#leaked-otp)
 - [Unzip me now](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#unzip-me-now)
 - [Ping 0x02](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x02)
-- [Under Construction]()
+- [Under Construction](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#under-construction)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -762,21 +762,21 @@ Sau khi chèn payload này tôi có được flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image139.png?raw=true)
 ### Under Construction
 
-![img](140)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image140.png?raw=true)
 
 Truy cập trang web:
 
-![img](141)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image141.png?raw=true)
 
 Tôi đã kiểm tra source code và không tìm được gì.
 
 Tiếp theo thử download file thử thách cung cấp, là 1 file `.war`, xem nội dung bên trong:
 
-![img](142)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image142.png?raw=true)
 
 Thử xem nội dung file `image.jsp`:
 
-![img](143)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image143.png?raw=true)
 
 Phân tích đoạn code này:
 
@@ -792,11 +792,11 @@ Phân tích đoạn code này:
 
 Đồng thời, tôi tìm hiểu được website sử dụng `tomcat`:
 
-![img](144)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image144.png?raw=true)
 
 Với `tomcat`, thư mục `resources` thường nằm ở `/var/lib/tomcat/webapps/ROOT/resources/`. Tôi đã thử gửi GET request đến `/image.jsp?file=../../../../../../flag.txt` và đã thu được flag:
 
-![img](145)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image145.png?raw=true)
 
 
 
