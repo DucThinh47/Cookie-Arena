@@ -30,7 +30,7 @@
 - [Under Construction](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#under-construction)
 - [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
 - [Ping 0x01](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x01)
-- [The Existed File]()
+- [The Existed File](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-existed-file)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -818,9 +818,9 @@ Tiếp tục là 1 thử thách command injection, sau khi thử một loạt pa
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image150.png?raw=true)
 ### The Existed File
 
-![img](151)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image151.png?raw=true)
 
-![img](152)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image152.png?raw=true)
 
 Tiếp tục là một thử thách liên quan đến Command Injection, lần này dựa vào đoạn code được cung cấp, tôi thấy rằng server có filter khá kỹ:
 
@@ -843,11 +843,11 @@ Với filter này, tôi không thể nối lệnh bằng cách dùng khoảng tr
 
 Tuy nhiên, filter này không lọc `$()` (command substitution):
 
-![img](153)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image153.png?raw=true)
 
 Tôi thử nhập `$(/flag.txt)`:
 
-![img](154)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image154.png?raw=true)
 
 Chỉ nhận được thông báo file có tồn tại. Để đọc được nội dung của file, ý tưởng của tôi là sử dụng `Burp Collaborator` để tạo host lắng nghe, sau đó sử dụng `curl` để gửi nội dung file `/flag.txt` tới đây. Payload của tôi có dạng:
 
@@ -859,9 +859,9 @@ Chỉ nhận được thông báo file có tồn tại. Để đọc được n�
 
 Sau khi gửi request, tôi thu được flag:
 
-![img](155)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image155.png?raw=true)
 
-![img](156)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image156.png?raw=true)
 
 
 
