@@ -914,11 +914,11 @@ Là 1 thử thách command injection, tôi sử dụng payload `127.0.0.1%0acat%
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image163.png?raw=true)
 ### Magic Login
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image164.png?raw=true)
+![img](164)
 
 Trang web:
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image165.png?raw=true)
+![img](h)
 
 Xem source page:
 
@@ -958,7 +958,7 @@ Khi search SHA256 magic hash PHP collision tôi tìm được payload từ trang
 
 Tiếp theo tôi thử `username:password` là `admin:34250003024812` thì vào được trang `/upload.php`:
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image166.png?raw=true)
+![img]()
 
 Tại đây tôi thử tạo 1 RCE `shell.php` đơn giản: 
 
@@ -966,15 +966,15 @@ Tại đây tôi thử tạo 1 RCE `shell.php` đơn giản:
 
 Upload file này lên website:
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image167.png?raw=true)
+![img]()
 
 Click vào `File` và thực hiện RCE:
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image168.png?raw=true)
+![img]()
 
 => RCE thành công. Tiếp theo đọc file /flag.txt và tìm được flag:
 
-![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image169.png?raw=true)
+![img]()
 
 
 
