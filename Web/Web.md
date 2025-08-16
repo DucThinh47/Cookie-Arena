@@ -29,7 +29,7 @@
 - [Ping 0x02](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x02)
 - [Under Construction](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#under-construction)
 - [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
-- [Ping 0x01]()
+- [Ping 0x01](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x01)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -810,11 +810,11 @@ Tiếp tục là một thử thách có dạng command injection, khi tôi chèn
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image148.png?raw=true)
 ### Ping 0x01
 
-![img](149)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image149.png?raw=true)
 
 Tiếp tục là 1 thử thách command injection, sau khi thử một loạt payload, thì việc xuống dòng để nối lệnh đã hoạt động:
 
-![img](150)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image150.png?raw=true)
 
 
 
