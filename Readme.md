@@ -33,3 +33,4 @@
 - [The Existed File](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-existed-file)
 - [Simple Blind SQL Injection](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#simple-blind-sql-injection)
 - [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
+- [Magic Login]()

