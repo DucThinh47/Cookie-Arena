@@ -31,5 +31,5 @@
 - [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
 - [Ping 0x01](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x01)
 - [The Existed File](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-existed-file)
-- [Simple Blind SQL Injection]()
-- [Ethical Ping Pong Club]()
+- [Simple Blind SQL Injection](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#simple-blind-sql-injection)
+- [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)

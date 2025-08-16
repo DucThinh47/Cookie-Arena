@@ -31,8 +31,8 @@
 - [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
 - [Ping 0x01](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x01)
 - [The Existed File](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-existed-file)
-- [Simple Blind SQL Injection]()
-- [Ethical Ping Pong Club]()
+- [Simple Blind SQL Injection](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#simple-blind-sql-injection)
+- [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -866,11 +866,11 @@ Sau khi gửi request, tôi thu được flag:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image156.png?raw=true)
 ### Simple Blind SQL Injection
 
-![img](157)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image157.png?raw=true)
 
 Trang web sẽ có trường để nhập `uid` để kiểm tra xem user có uid này tồn tại không, đồng thời mỗi khi nhập `uid` thì tham số `?uid=` sẽ được thêm vào URL và trang web cũng trả về cú pháp truy vấn SQL, do đó tôi đã thử thêm payload để tìm ra độ dài mật khẩu:
 
-![img](158)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image158.png?raw=true)
 
 Như vậy tôi đã tìm ra độ dài mật khẩu là 13. Tiếp theo tôi đã viết một script python để brute-force từng ký tự của mật khẩu:
 
@@ -895,22 +895,22 @@ Như vậy tôi đã tìm ra độ dài mật khẩu là 13. Tiếp theo tôi đ
 
 Cuối cùng mật khẩu tìm được là:
 
-![img](159)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image159.png?raw=true)
 
 Đăng nhập và tìm được flag:
 
-![img](160)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image160.png?raw=true)
 ### Ethical Ping Pong Club
 
-![img](161)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image161.png?raw=true)
 
 Trang web:
 
-![img](162)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image162.png?raw=true)
 
 Là 1 thử thách command injection, tôi sử dụng payload `127.0.0.1%0acat%09/fla?.txt` và tìm được flag:
 
-![img](163)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image163.png?raw=true)
 
 
 
