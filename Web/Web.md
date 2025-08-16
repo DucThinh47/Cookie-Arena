@@ -28,7 +28,7 @@
 - [Unzip me now](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#unzip-me-now)
 - [Ping 0x02](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ping-0x02)
 - [Under Construction](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#under-construction)
-- [Youtube Downloader]()
+- [Youtube Downloader](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#youtube-downloader)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -800,16 +800,13 @@ Với `tomcat`, thư mục `resources` thường nằm ở `/var/lib/tomcat/weba
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image145.png?raw=true)
 ### Youtube Downloader
 
-![img](146)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image146.png?raw=true)
 
 Tiếp tục là một thử thách có dạng command injection, khi tôi chèn thêm payload `%0acat%09/fla?.txt` sau khi nhập URL thì server trả về flag:
 
-![img](147)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image147.png?raw=true)
 
-![img](148)
-
-
-CHH{Ea5y_cOmmaND_inj3c7Ion_7e513f4c806a4f01a18bfaadc15905a6}
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image148.png?raw=true)
 
 
 
