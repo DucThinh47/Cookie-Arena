@@ -35,3 +35,4 @@
 - [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
 - [Magic Login](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#magic-login)
 - [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
+- [Modify user role]()
