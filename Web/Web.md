@@ -975,6 +975,50 @@ Click vào `File` và thực hiện RCE:
 => RCE thành công. Tiếp theo đọc file /flag.txt và tìm được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image169.png?raw=true)
+### Time
+
+![img](170)
+
+Truy cập trang web:
+
+![img](171)
+
+Tìm hiểu source code được cung cấp, trong `TimeModel.php` có đoạn sau:
+
+    public function __construct($format)
+    {
+        $this->command = "date '+" . $format . "' 2>&1";
+    }
+
+và sau đó:
+
+    $time = exec($this->command);
+- Ở đây `$format` lấy trực tiếp từ `$_GET['format']` (tham số trên URL)
+- Giá trị này không được kiểm tra hay có filter nào
+
+Có vẻ tác giả cho phép user chọn định dạng hiển thị thời gian (vd: `/?format=%H:%M:%S`). Lệnh thực thi hợp lệ sẽ có dạng:
+
+    date '+%H:%M:%S'
+
+Nhưng lệnh này được build bằng nối chuỗi trực tiếp:
+
+    "date '+" . $format . "' 2>&1"
+- Tham số `$format` được đặt bên trong dấu nháy đơn '...' của shell
+=> Nếu attacker chèn ký tự `'` để thoát khỏi chuỗi, thì toàn bộ phần sau sẽ trở thành lệnh shell mới
+
+Ví dụ: `?format=%H:%M:%S';id;#` (cần URL encode):
+- Lệnh thực tế trở thành `date '+%H:%M:%S';id;#'`
+- `date '+%H:%M:%S'` chạy bình thường
+- Sau đó `;id;` cũng được thực thi
+- Dấu `#` biến phần còn lại thành comment => shell bỏ qua, không báo lỗi
+
+![img](172)
+
+Tiếp theo, chỉ cần chèn `cat /flag.txt` dưới dạng URL Encode và tìm được flag:
+
+![img](173)
+
+
 
 
 

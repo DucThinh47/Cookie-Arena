@@ -34,3 +34,4 @@
 - [Simple Blind SQL Injection](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#simple-blind-sql-injection)
 - [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
 - [Magic Login](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#magic-login)
+- [Time]()
