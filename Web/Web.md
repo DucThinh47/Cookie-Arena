@@ -35,7 +35,7 @@
 - [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
 - [Magic Login](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#magic-login)
 - [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
-- [Modify user role]()
+- [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1021,17 +1021,17 @@ Tiếp theo, chỉ cần chèn `cat /flag.txt` dưới dạng URL Encode và tì
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image173.png?raw=true)
 ### Modify user role
 
-![img](174)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image174.png?raw=true)
 
 Sau khi đăng nhập, trang web có trường cho phép thay đổi email của user, request có dạng như sau:
 
-![img](175)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image175.png?raw=true)
 
 Tôi đã thử thêm vào request body tham số `role:2` và tìm được flag:
 
-![img](176)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image176.png?raw=true)
 
-![img](177)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image177.png?raw=true)
 
 
 
