@@ -34,6 +34,7 @@
 - [Simple Blind SQL Injection](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#simple-blind-sql-injection)
 - [Ethical Ping Pong Club](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#ethical-ping-pong-club)
 - [Magic Login](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#magic-login)
+- [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -977,11 +978,11 @@ Click vào `File` và thực hiện RCE:
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image169.png?raw=true)
 ### Time
 
-![img](170)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image170.png?raw=true)
 
 Truy cập trang web:
 
-![img](171)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image171.png?raw=true)
 
 Tìm hiểu source code được cung cấp, trong `TimeModel.php` có đoạn sau:
 
@@ -1012,11 +1013,11 @@ Ví dụ: `?format=%H:%M:%S';id;#` (cần URL encode):
 - Sau đó `;id;` cũng được thực thi
 - Dấu `#` biến phần còn lại thành comment => shell bỏ qua, không báo lỗi
 
-![img](172)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image172.png?raw=true)
 
 Tiếp theo, chỉ cần chèn `cat /flag.txt` dưới dạng URL Encode và tìm được flag:
 
-![img](173)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image173.png?raw=true)
 
 
 
