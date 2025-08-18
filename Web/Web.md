@@ -36,7 +36,7 @@
 - [Magic Login](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#magic-login)
 - [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
-- [Be Positive]()
+- [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1035,25 +1035,25 @@ Tôi đã thử thêm vào request body tham số `role:2` và tìm được fla
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image177.png?raw=true)
 ### Be Positive
 
-![img](178)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image178.png?raw=true)
 
 Truy cập website:
 
-![img](179)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image179.png?raw=true)
 
 Trang web có chức năng `transfer`, chuyển tiền qua lại giữa `alice` và `bob`, request khi chuyển sẽ trông như sau:
 
-![img](180)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image180.png?raw=true)
 
 Cả `alice` và `bob` mỗi người sẽ có tổng cộng 1500$, tuy nhiên để "mua" flag thì cần $3001, vì vậy cho dù có chuyển hết 1500$ từ người này sang người kia cũng không đủ để mua flag. Mỗi lần chuyển bao nhiêu thì tài khoản sẽ bị trừ đi bấy nhiêu, nếu chuyển nhiều hơn số tiền hiện tại thì sẽ báo lỗi:
 
-![img](181)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image181.png?raw=true)
 
 Tuy nhiên tôi đã thử chuyển đi một số tiền âm thì tài khoản lại được cộng thêm tiền, qua đó tôi tìm được flag:
 
-![img](182)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image182.png?raw=true)
 
-![img](183)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image183.png?raw=true)
 
 
 
