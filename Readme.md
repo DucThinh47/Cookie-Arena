@@ -38,4 +38,4 @@
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
 - [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
-- [Favorite JWT]()
+- [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)

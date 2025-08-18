@@ -38,7 +38,7 @@
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
 - [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
-- [Favorite JWT]()
+- [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1069,11 +1069,11 @@ Tuy là cùng 1 người chuyển nhưng website lại tính thành 2 lần nh�
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image186.png?raw=true)
 ### Favorite JWT
 
-![img](187)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image187.png?raw=true)
 
 Trong thử thách này tôi chỉ cần thay đổi payload trong JWT thành `admin` và có thể lấy được flag (không cần signature):
 
-![img](188)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image188.png?raw=true)
 
 
 
