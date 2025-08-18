@@ -39,7 +39,7 @@
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
 - [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
 - [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
-- [Logger Middleware]()
+- [Logger Middleware](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#logger-middleware)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1077,11 +1077,11 @@ Trong thử thách này tôi chỉ cần thay đổi payload trong JWT thành `a
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image188.png?raw=true)
 ### Logger Middleware
 
-![img](189)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image189.png?raw=true)
 
 Truy cập trang web:
 
-![img](190)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image190.png?raw=true)
 
 Trang web sẽ ghi lại log của những lần request, những thông tin bao gồm: `IP, User Agent, Referer, URL, Cookie, Timestamp`.
 
@@ -1089,7 +1089,7 @@ Không có button hay thao tác gì có thể thực hiện, dựa vào mô tả
 
 Trước tiên tôi thử thay đổi giá trị header `User Agent` có sẵn trong request khi load trang web: 
 
-![img](191)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image191.png?raw=true)
 
 Response đã trả về thông báo lỗi kèm theo cú pháp truy vấn SQL:
 
@@ -1098,25 +1098,25 @@ Response đã trả về thông báo lỗi kèm theo cú pháp truy vấn SQL:
 
 Tiếp theo tôi thử thay giá trị của header `User Agent` thành `Mozilla', (select 'test'), null, null, null)/*`:
 
-![img](192)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image192.png?raw=true)
 
-![img](193)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image193.png?raw=true)
 
 => Thành công chèn payload, tiếp theo tôi thử chèn payload để tìm tên các bảng, tôi sẽ thử payload `Mozilla',(select group_concat(tbl_name) from sqlite_schema where type='table'), null, null, null)/*`:
 
-![img](194)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image194.png?raw=true)
 
 Tên table lần lượt được trả về là `logger`, `flag`:
 
-![img](195)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image195.png?raw=true)
 
 Tiếp theo để liệt kê tên các cột trong bảng `flag`, tôi chèn payload `Mozilla',(SELECT group_concat(name) FROM pragma_table_info('flag')),null,null,null)/*`:
 
-![img](196)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image196.png?raw=true)
 
 => Tên cột cần tìm có vẻ là `secr3t_flag`, payload cuối cùng để xem giá trị của cột này là `Mozilla',(SELECT group_concat(secr3t_flag) FROM flag),null,null,null)/*`
 
-![img](197)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image197.png?raw=true)
 
 
 
