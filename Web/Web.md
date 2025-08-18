@@ -38,6 +38,7 @@
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
 - [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
+- [Favorite JWT]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1066,6 +1067,14 @@ Cũng giống như thử thách `Be Positive` nhưng lần này website đã l�
 Tuy là cùng 1 người chuyển nhưng website lại tính thành 2 lần nhận, sau đó có thể mua flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image186.png?raw=true)
+### Favorite JWT
+
+![img](187)
+
+Trong thử thách này tôi chỉ cần thay đổi payload trong JWT thành `admin` và có thể lấy được flag (không cần signature):
+
+![img](188)
+
 
 
 
