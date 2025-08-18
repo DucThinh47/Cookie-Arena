@@ -39,6 +39,7 @@
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
 - [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
 - [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
+- [Logger Middleware]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1074,6 +1075,50 @@ Tuy là cùng 1 người chuyển nhưng website lại tính thành 2 lần nh�
 Trong thử thách này tôi chỉ cần thay đổi payload trong JWT thành `admin` và có thể lấy được flag (không cần signature):
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image188.png?raw=true)
+### Logger Middleware
+
+![img](189)
+
+Truy cập trang web:
+
+![img](190)
+
+Trang web sẽ ghi lại log của những lần request, những thông tin bao gồm: `IP, User Agent, Referer, URL, Cookie, Timestamp`.
+
+Không có button hay thao tác gì có thể thực hiện, dựa vào mô tả thử thách, có thể tận dụng lợi dụng request headers để chèn payload SQLi.
+
+Trước tiên tôi thử thay đổi giá trị header `User Agent` có sẵn trong request khi load trang web: 
+
+![img](191)
+
+Response đã trả về thông báo lỗi kèm theo cú pháp truy vấn SQL:
+
+    INSERT INTO logger (ip_address, user_agent, referer, url, cookie, created_at)
+    VALUES ('***', 'Mozilla'', 'None', 'http://103.97.125.56:30162/', 'None', '2025-08-18 08:41:05.316420')
+
+Tiếp theo tôi thử thay giá trị của header `User Agent` thành `Mozilla', (select 'test'), null, null, null)/*`:
+
+![img](192)
+
+![img](193)
+
+=> Thành công chèn payload, tiếp theo tôi thử chèn payload để tìm tên các bảng, tôi sẽ thử payload `Mozilla',(select group_concat(tbl_name) from sqlite_schema where type='table'), null, null, null)/*`:
+
+![img](194)
+
+Tên table lần lượt được trả về là `logger`, `flag`:
+
+![img](195)
+
+Tiếp theo để liệt kê tên các cột trong bảng `flag`, tôi chèn payload `Mozilla',(SELECT group_concat(name) FROM pragma_table_info('flag')),null,null,null)/*`:
+
+![img](196)
+
+=> Tên cột cần tìm có vẻ là `secr3t_flag`, payload cuối cùng để xem giá trị của cột này là `Mozilla',(SELECT group_concat(secr3t_flag) FROM flag),null,null,null)/*`
+
+![img](197)
+
+
 
 
 
