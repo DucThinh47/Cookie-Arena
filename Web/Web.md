@@ -1172,9 +1172,3 @@ Tiếp theo để liệt kê tên các cột trong bảng `flag`, tôi chèn pay
 
 
 
-
-
-
-
-
-
