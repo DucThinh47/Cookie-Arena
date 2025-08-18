@@ -37,4 +37,4 @@
 - [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
-- [Slow Down]()
+- [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)

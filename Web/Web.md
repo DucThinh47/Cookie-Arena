@@ -37,7 +37,7 @@
 - [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
 - [Be Positive](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#be-positive)
-- [Slow Down]()
+- [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1057,15 +1057,15 @@ Tuy nhiên tôi đã thử chuyển đi một số tiền âm thì tài khoản 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image183.png?raw=true)
 ### Slow Down
 
-![img](184)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image184.png?raw=true)
 
 Cũng giống như thử thách `Be Positive` nhưng lần này website đã lọc ra những giá trị không hợp lệ của tham số `amount` nên không thể chuyển số tiền âm được. Vì vậy tôi đã thử lợi dụng lỗ hổng `Race condition`, sử dụng tính năng Request group trong Burp suite, cùng login vào 1 tài khoản và chuyển tiền cho tài khoản kia gần như cùng 1 lúc:
 
-![img](185)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image185.png?raw=true)
 
 Tuy là cùng 1 người chuyển nhưng website lại tính thành 2 lần nhận, sau đó có thể mua flag:
 
-![img](186)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image186.png?raw=true)
 
 
 
