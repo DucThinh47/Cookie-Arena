@@ -36,3 +36,4 @@
 - [Magic Login](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#magic-login)
 - [Time](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#time)
 - [Modify user role](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#modify-user-role)
+- [Be Positive]()
