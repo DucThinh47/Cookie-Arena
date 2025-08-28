@@ -41,3 +41,6 @@
 - [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
 - [Logger Middleware](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#logger-middleware)
 - [Baby File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-file-inclusion)
+- [Remote File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#remote-file-inclusion)
+- [Upload File via URL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#upload-file-via-url)
+- [The Evil Assignment on Canvas](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-evil-assignment-on-canvas)
