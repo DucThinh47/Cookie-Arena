@@ -41,7 +41,9 @@
 - [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
 - [Logger Middleware](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#logger-middleware)
 - [Baby File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-file-inclusion)
-- [Remote File Inclusion]()
+- [Remote File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#remote-file-inclusion)
+- [Upload File via URL]()
+- [The Evil Assignment on Canvas]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1164,27 +1166,101 @@ Decode đoạn base64 này, tôi tìm được file chứa flag là `/flagDHFhm.
 
 ### Remote File Inclusion
 
-![img](208)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image208.png?raw=true)
 
 Trang web:
 
-![img](209)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image209.png?raw=true)
 
 Tôi thử thay giá trị tham số `file` thành `file:///etc/passwd`:
 
-![img](210)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image210.png?raw=true)
 
 => Thành công đọc được nội dung file `/etc/passwd`. Tuy nhiên, vẫn chưa biết file chứa flag sẽ có format như nào, tôi cần thực thi lệnh `find / -name *.txt` để tìm. Để làm vậy, tôi thử thay giá trị của tham số `file` thành `data://text/plain;base64,PD9waHAgZWNobyBgaWRgOyA/Pg==` (đoạn mã base 64 này khi decode sẽ ra `<?php echo `id`; ?>`), bên cạnh `file://`, `data://` là 1 wrapper khác trong PHP, là một trick để biến LFI thành LFI2RCE mà không cần upload hay poison gì cả:
 
-![img](211)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image211.png?raw=true)
 
 => Thành công thực thi câu lệnh `id`, tiếp theo tôi sẽ in ra output của lệnh `find / -name *.txt`:
 
-![img](212)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image212.png?raw=true)
 
 => Tìm ra file chứa flag là `/flagaGuNY.txt`, đọc nội dung file này và tìm được flag:
 
-![img](213)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image213.png?raw=true)
+
+### Upload File via URL
+
+![img](214)
+
+Trang web:
+
+![img](215)
+
+Thử nhập `file:///etc/passwd` và submit:
+
+![img](216)
+
+Kiểm tra source code:
+
+![img](217)
+
+Thử click vào `static/upload/passwd`, kiểm tra request và response trong Burp Suite:
+
+![img](218)
+
+=> Thành công trả về nội dung file `/etc/passwd`. Tiếp theo, chỉ cần nhập `file:///flag.txt` là tìm ra flag:
+
+![img](219)
+
+### The Evil Assignment on Canvas
+
+![img](220)
+
+Trang web:
+
+![img](221)
+
+Là một trang upload file. Tôi thử upload 1 file ảnh `.jpg`:
+
+![img](222)
+
+=> Upload thành công file `.jpg`, kiểm tra request, tôi thử đổi extension thành `.php`:
+
+![img](223)
+
+=> Không thành công. Tôi thử sửa thành `.jpg.php`:
+
+![img](224)
+
+=> Server chấp nhận file có extension là `.jpg.php`. Tiếp theo, tôi tạo file `shell.php` có nội dung là:
+
+   <?php echo system($_GET['cmd']); ?>
+
+Thay đổi MIME Type của file thành `.jpg` để server nhận diện file là file `.jpg`:
+
+![img](225)
+
+![img](226)
+
+Thử đổi tên file thành `shell.jpg` và upload:
+
+![img](227)
+
+=> Upload thành công, thực hiện thêm `.php` vào tên file và upload lại:
+
+![img](228)
+
+=> Upload thành công, truy cập `/uploads/shell.jpg.php?cmd=id` để kiểm tra:
+
+![img](229)
+
+Tiếp theo, thay lệnh `id` thành `find / -name *.txt` để tìm file chứa flag:
+
+![img](230)
+
+=> Tìm ra file chứa flag là `/flagtSPRh.txt`, tiếp theo xem nội dung file và tìm được flag:
+
+![img](231)
 
 
 
