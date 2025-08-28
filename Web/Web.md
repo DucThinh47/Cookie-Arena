@@ -40,7 +40,7 @@
 - [Slow Down](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#slow-down)
 - [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
 - [Logger Middleware](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#logger-middleware)
-- [Baby File Inclusion]()
+- [Baby File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-file-inclusion)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1121,45 +1121,45 @@ Tiếp theo để liệt kê tên các cột trong bảng `flag`, tôi chèn pay
 
 ### Baby File Inclusion
 
-![img](198)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image198.png?raw=true)
 
 Truy cập website:
 
-![img](199)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image199.png?raw=true)
 
 Tôi thử upload 1 file `.jpg`:
 
-![img](200)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image200.png?raw=true)
 
 => Upload thành công file `.jpg`
 
 Tiếp theo, thử upload file `shell.php`:
 
-![img](201)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image201.png?raw=true)
 
 => Server không chấp nhận file có extension là `.php`. Ý tưởng của tôi là tạo file `.jpg` thật nhưng file này được nhúng payload vào `EXIF/Comment` (phải tăng kích thước của file, nếu không server sẽ không nhận file có kích thước quá nhỏ):
 
-![img](202)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image202.png?raw=true)
 
 Tiếp theo, thử upload file `shell.jpg`:
 
-![img](203)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image203.png?raw=true)
 
 => Upload thành công. Đồng thời tôi đã tìm ra nơi server lưu trữ file được upload lên là `/uploads`. Tôi thử thực thi file này bằng các gọi qua LFI: `/index.php?page=uploads/shell.jpg&cmd=id`:
 
-![img](204)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image204.png?raw=true)
 
 => Output thực thi câu lệnh `id` đã được trả về nhưng do bytes JPEG bị lẫn vào output, nội dung thực thi bị loạn. Tôi sẽ pipe qua base64, như vậy output sẽ được trả về dưới dạng base64. Tiếp theo, tìm kiếm tất cả file `.txt` bằng lệnh `find / -name *.txt`:
 
-![img](205)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image205.png?raw=true)
 
 Decode đoạn base64 này, tôi tìm được file chứa flag là `/flagDHFhm.txt`:
 
-![img](206)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image206.png?raw=true)
 
 Đọc nội dung file này và tìm được flag:
 
-![img](207)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image207.png?raw=true)
 
 
 
