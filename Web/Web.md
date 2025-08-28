@@ -41,6 +41,7 @@
 - [Favorite JWT](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#favorite-jwt)
 - [Logger Middleware](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#logger-middleware)
 - [Baby File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-file-inclusion)
+- [Remote File Inclusion]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1160,6 +1161,31 @@ Decode đoạn base64 này, tôi tìm được file chứa flag là `/flagDHFhm.
 Đọc nội dung file này và tìm được flag:
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image207.png?raw=true)
+
+### Remote File Inclusion
+
+![img](208)
+
+Trang web:
+
+![img](209)
+
+Tôi thử thay giá trị tham số `file` thành `file:///etc/passwd`:
+
+![img](210)
+
+=> Thành công đọc được nội dung file `/etc/passwd`. Tuy nhiên, vẫn chưa biết file chứa flag sẽ có format như nào, tôi cần thực thi lệnh `find / -name *.txt` để tìm. Để làm vậy, tôi thử thay giá trị của tham số `file` thành `data://text/plain;base64,PD9waHAgZWNobyBgaWRgOyA/Pg==` (đoạn mã base 64 này khi decode sẽ ra `<?php echo `id`; ?>`), bên cạnh `file://`, `data://` là 1 wrapper khác trong PHP, là một trick để biến LFI thành LFI2RCE mà không cần upload hay poison gì cả:
+
+![img](211)
+
+=> Thành công thực thi câu lệnh `id`, tiếp theo tôi sẽ in ra output của lệnh `find / -name *.txt`:
+
+![img](212)
+
+=> Tìm ra file chứa flag là `/flagaGuNY.txt`, đọc nội dung file này và tìm được flag:
+
+![img](213)
+
 
 
 
