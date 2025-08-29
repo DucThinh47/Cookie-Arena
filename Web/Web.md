@@ -44,7 +44,7 @@
 - [Remote File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#remote-file-inclusion)
 - [Upload File via URL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#upload-file-via-url)
 - [The Evil Assignment on Canvas](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-evil-assignment-on-canvas)
-- [Baby Crawler]()
+- [Baby Crawler](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-crawler)
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1265,19 +1265,19 @@ Tiếp theo, thay lệnh `id` thành `find / -name *.txt` để tìm file chứa
 
 ### Baby Crawler
 
-![img](232)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image232.png?raw=true)
 
 Khi click `CRAWL` thì server sẽ trả về một đường dẫn đến cached file:
 
-![img](233)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image233.png?raw=true)
 
 Nội dung cached file là nội dung của trang web chứa bài báo đã nhập:
 
-![img](234)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image234.png?raw=true)
 
 Kiểm tra source code, tôi tìm ra endpoint `/?debug`, thử truy cập, tìm ra đoạn mã PHP mà server dùng để xử lý logic:
 
-![img](235)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image235.png?raw=true)
 
 Dựa vào đoạn này:
 
@@ -1301,7 +1301,7 @@ Payload cuối cùng sẽ là:
 
 Click CRAWL, kiểm tra bên webhook:
 
-![img](236)
+![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image236.png?raw=true)
 
 => Tải file và tìm được flag.
 

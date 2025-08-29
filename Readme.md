@@ -44,3 +44,4 @@
 - [Remote File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#remote-file-inclusion)
 - [Upload File via URL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#upload-file-via-url)
 - [The Evil Assignment on Canvas](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-evil-assignment-on-canvas)
+- [Baby Crawler](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#baby-crawler)
